@@ -1,0 +1,13 @@
+[Unit]
+Description=Tesla P4 Fan Control Service
+After=multi-user.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/usr/local/bin/fangpu
+ExecStart=/usr/local/bin/fangpu/fan_env/bin/python3 /usr/local/bin/fangpu/tesla_fan_control.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
